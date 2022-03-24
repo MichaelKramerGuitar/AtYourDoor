@@ -1,8 +1,9 @@
 package edu.bu.met.cs665;
 
-import static org.junit.Assert.assertEquals;
-import org.junit.Test;
 import edu.bu.met.cs665.example1.Person;
+import org.testng.annotations.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 // Write some Unit tests for your program like the following.
 

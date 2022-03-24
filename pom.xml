@@ -145,7 +145,7 @@
 					<includeProjectDependencies>true</includeProjectDependencies>
 					<includePluginDependencies>true</includePluginDependencies>
 					<killAfter>-1</killAfter>
-					<mainClass>edu.utexas.cs.cs378.Main</mainClass>
+					<mainClass>edu.bu.met.cs665.Main</mainClass>
 					<cleanupDaemonThreads>false</cleanupDaemonThreads>
 				</configuration>
 			</plugin>
@@ -212,7 +212,7 @@
 		<dependency>
 		  <groupId>org.apache.logging.log4j</groupId>
 		  <artifactId>log4j-core</artifactId>
-		  <version>[2.13.2,)</version>
+		  <version>[2.13.2]</version>
 		</dependency>
 
 	</dependencies>

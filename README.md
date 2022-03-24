@@ -2,6 +2,8 @@
 
 This is a Java Maven Project Template
 
+# Probably looking at OBSERVER PATTERN here 
+
 
 # How to compile the project
 
