@@ -27,7 +27,11 @@ public class Dispatcher {
 
   // getters
   public ArrayList<DriverBase> getDriverList() {
-    return driverList;
+    return this.driverList;
+  }
+
+  public Store getRequestor() {
+    return this.requestor;
   }
 
   /**
@@ -36,6 +40,7 @@ public class Dispatcher {
    * @return and int representing a driver id
    */
   public int dispatch() {
+    // if driversList.size() == 2 this will return 1 for testing
     int driver = (int) (Math.random() * (driverList.size() - 1) + 1);
     System.out.println("Copy " + requestor.getName().toUpperCase() + "..."
                        + "Dispatcher assigning Driver #" + driver
