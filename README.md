@@ -45,7 +45,7 @@ types?**_
 - Being that the Observer Pattern is fairly closely adhered to, this design satisfies
   the characteristic of loose coupling which implies great flexibility. In order to add
   Publishers (classes like Store which would need to notify a Dispatcher) all we would need
-  to do is implement the PublisherBase interface and implement the methods therin. Similarly,
+  to do is implement the PublisherBase interface and implement the methods therein. Similarly,
   in order to add more Subscribers, let's say for example we wanted to loop the Customer into
   the equation such that they could receive status of their order, all we need to do is
   implement the DriverBase interface (which we might consider renaming to suggest a more

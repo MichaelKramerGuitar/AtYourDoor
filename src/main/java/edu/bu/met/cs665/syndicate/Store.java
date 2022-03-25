@@ -75,6 +75,4 @@ public class Store implements SyndicateRequestor {
   public String getDeliveryRequest() {
     return this.deliveryRequest;
   }
-
-
 }
