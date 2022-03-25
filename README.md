@@ -1,9 +1,80 @@
-# Project Template
+# 1 Application Description: AtYourDoor
 
-This is a Java Maven Project Template
+_A consortium of shops in a large city has established an agreement with local independent van and
+taxi drivers to deliver products from city shops to customer destinations.
+In this assignment, you will implement a notification system to send notifications about delivery
+requests to drivers. When a store gets a product delivery orders should be created at store and a
+delivery request should be broadcasted to all drivers._
 
-# Probably looking at OBSERVER PATTERN here 
+# 1.1 Implementation Details
 
+_Your implementation should include the following functionalities:_
+
+- Your implementation should include classes for Shop, Delivery Request and Driver.
+- For testing purpose create a Shop object, delivery requests and driver objects.
+- For testing purposes send out a single delivery request and notify all drivers regarding the
+  delivery request. You can assign the delivery request based on some random assignment or
+  based on first come first served principles.
+
+_**Note: In this assignment, you should apply “at least one" of the design patterns that we learned
+in our class. We do not mention which one of the design patterns is suitable for this scenario. This
+would be your task as a software engineer to find it out.**_
+
+_**Note: The given application scenario can be implemented in different ways and with different
+implementation details. There is not only one single correct design and implementation for
+the above application scenario. Each software developer might consider different assumptions and
+design the software based on them. In this assignment you are free to have your own detail assumptions
+and implement the details in your own way based on your own ideas. You should document
+your assumptions very well in your README.md file of your project and consider them in your
+UML diagrams.**_
+
+# 2.1 Task 1: Implementation Description
+
+- The approach implemented is a slightly modified Observer Pattern.
+  - The PublisherBase Interface is syndicate/SyndicateRequestor
+  - The Concrete Publishers are the syndicate/Store
+  - The SubscriberBase Interface is distribution/DriverBase
+  - The concrete subscribers are distribution/Driver
+  - The modification to the Observer Pattern in the additional distribution/Dispatcher
+   which chooses from the list of subscribers (Drivers) and assigns one to the delivery request
+   made by the Store.
+
+_**How is the flexibility, of your implementation, e.g., how you add or remove in future new
+types?**_
+
+- Being that the Observer Pattern is fairly closely adhered to, this design satisfies
+  the characteristic of loose coupling which implies great flexibility. In order to add
+  Publishers (classes like Store which would need to notify a Dispatcher) all we would need
+  to do is implement the PublisherBase interface and implement the methods therin. Similarly,
+  in order to add more Subscribers, let's say for example we wanted to loop the Customer into
+  the equation such that they could receive status of their order, all we need to do is
+  implement the DriverBase interface (which we might consider renaming to suggest a more
+  general usage as is implied by the Observer Pattern of "SubscriberBase"). In this way
+  a Customer could simply .updateSelf() accordingly.
+
+_**How is the simplicity and understandability of your implementation?**_
+
+- The Application as implemented here is using #1) a pattern that is quite common in modern
+  software applications such as all social media, Uber/Lyft, AmazonPrime, Weather Applications
+  and the list is seemingly endless truly. In this way, it seems quite easy to relate this
+  system of an entity that creates an "order" and "notifies" a "subscriber base" as needed with
+  the additional feature of having a "middle man" Dispatcher who chooses which subscriber
+  makes the delivery. We might imagine expanding this idea to incorperating the idea that
+  an active driver cannot recieve an assignment from the dispatcher, or even more interesting
+  incorperating the idea of a route and in general the idea of location such that each driver
+  has a location and the dispatcher assigns drivers based on that instead of at random. These
+  concepts and additional ideas are so common in the current marketplace that it seems their
+  understandability and perhaps more aptly, their relatability, is quite high. To this end,
+  there are quite few moving parts in this pattern and implementation such that the simplicity
+  and elegance seems to be high as well.
+
+_**How you avoided duplicated code?**_
+
+- Running the risk of redundancy, simply by adhering quite strictly to the Observer Pattern
+  and deviating only to satisfy the additional requirements of the assignment such that
+  only one Driver is assigned per order.  By adhering to the pattern there is virtually no
+  repetition in code and yet the preconditions are elegantly satisfied thusly exposing the
+  power of the pattern in the context of the outlined requirements.
 
 # How to compile the project
 
