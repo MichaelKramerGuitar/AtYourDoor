@@ -88,7 +88,9 @@ public class StoreTest {
       "Copy COSTCO...Dispatcher assigning Driver #1. Driver confirm assignment...\r\n" +
       "10-4 Dispatch. Delivery request was received by driver Driver: GROCERIES, TV, WASHING MACHINE\r\n";
     costco.setDeliveryRequest("groceries, tv, washing machine");
-    Assert.assertEquals(expected, outContent.toString());
+    Assert.assertEquals(
+      expected.replaceAll("\n", "").replaceAll("\r", ""),
+      outContent.toString().replaceAll("\n", "").replaceAll("\r", ""));
   }
 
   /**

@@ -54,10 +54,12 @@ public class MainTest {
     }
     // get a random costco order and assign a driver
     costco.setDeliveryRequest(costcoOrder);
-    String expected = "COSTCO contacting Dispatcher to assign the following delivery request: " + costcoOrder.toUpperCase() + "\r\n" +
-      "Copy COSTCO...Dispatcher assigning Driver #1. Driver confirm assignment...\r\n" +
-      "10-4 Dispatch. Delivery request was received by driver Driver #1: " + costcoOrder.toUpperCase() + "\r\n";
-    Assert.assertEquals(expected, outContent.toString());
+    String expected = "COSTCO contacting Dispatcher to assign the following delivery request: " + costcoOrder.toUpperCase() + "\n" +
+      "Copy COSTCO...Dispatcher assigning Driver #1. Driver confirm assignment...\n" +
+      "10-4 Dispatch. Delivery request was received by driver Driver #1: " + costcoOrder.toUpperCase();
+    Assert.assertEquals(
+      expected.replaceAll("\n", "").replaceAll("\r", ""),
+      outContent.toString().replaceAll("\n", "").replaceAll("\r", ""));
   }
 
   /**
@@ -77,9 +79,11 @@ public class MainTest {
     }
     // get a random costco order and assign a driver
     wholeFoods.setDeliveryRequest(wholeFoodsOrder);
-    String expected = "COSTCO contacting Dispatcher to assign the following delivery request: " + wholeFoodsOrder.toUpperCase() + "\r\n" +
-      "Copy COSTCO...Dispatcher assigning Driver #1. Driver confirm assignment...\r\n" +
-      "10-4 Dispatch. Delivery request was received by driver Driver #1: " + wholeFoodsOrder.toUpperCase() + "\r\n";
-    Assert.assertEquals(expected, outContent.toString());
+    String expected = "COSTCO contacting Dispatcher to assign the following delivery request: " + wholeFoodsOrder.toUpperCase() + "\n" +
+      "Copy COSTCO...Dispatcher assigning Driver #1. Driver confirm assignment...\n" +
+      "10-4 Dispatch. Delivery request was received by driver Driver #1: " + wholeFoodsOrder.toUpperCase();
+    Assert.assertEquals(
+      expected.replaceAll("\n", "").replaceAll("\r", ""),
+      outContent.toString().replaceAll("\n", "").replaceAll("\r", ""));
   }
 }

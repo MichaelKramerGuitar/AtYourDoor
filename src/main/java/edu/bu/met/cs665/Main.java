@@ -53,5 +53,20 @@ public class Main {
     // now give drivers whole foods order and assign a driver
     wholeFoods.setDeliveryRequest(
         wholefoodsOrders[(int) (Math.random() * (wholefoodsOrders.length - 1) + 1)]);
+    System.out.println();
+
+    String[] homeDepotOrders = new String[]{"wrench, drywall, screw driver",
+      "paint, rollers, smock",
+      "mulch, shovel, sand",
+      "bleach, mop, bucket, gloves",
+      "insulation, gaskets, metal trimmers, sealant"};
+
+    Store homeDepot = new Store("home depot");
+    for (int i = 0; i < driversOnDuty; i++) {
+      new Driver("Driver #" + i, homeDepot);
+    }
+    // now give drivers whole foods order and assign a driver
+    homeDepot.setDeliveryRequest(
+        homeDepotOrders[(int) (Math.random() * (homeDepotOrders.length - 1) + 1)]);
   }
 }
