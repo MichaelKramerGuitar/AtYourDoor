@@ -36,8 +36,8 @@ UML diagrams.**_
   - The SubscriberBase Interface is distribution/DriverBase
   - The concrete subscribers are distribution/Driver
   - The modification to the Observer Pattern in the additional distribution/Dispatcher
-   which chooses from the list of subscribers (Drivers) and assigns one to the delivery request
-   made by the Store.
+    which chooses from the list of subscribers (Drivers) and assigns one to the delivery request
+    made by the Store.
 
 _**How is the flexibility, of your implementation, e.g., how you add or remove in future new
 types?**_
@@ -59,9 +59,9 @@ _**How is the simplicity and understandability of your implementation?**_
   and the list is seemingly endless truly. In this way, it seems quite easy to relate this
   system of an entity that creates an "order" and "notifies" a "subscriber base" as needed with
   the additional feature of having a "middle man" Dispatcher who chooses which subscriber
-  makes the delivery. We might imagine expanding this idea to incorperating the idea that
-  an active driver cannot recieve an assignment from the dispatcher, or even more interesting
-  incorperating the idea of a route and in general the idea of location such that each driver
+  makes the delivery. We might imagine expanding this idea to incorporating the idea that
+  an active driver cannot receive an assignment from the dispatcher, or even more interesting
+  incorporating the idea of a route and in general the idea of location such that each driver
   has a location and the dispatcher assigns drivers based on that instead of at random. These
   concepts and additional ideas are so common in the current marketplace that it seems their
   understandability and perhaps more aptly, their relatability, is quite high. To this end,
@@ -78,17 +78,17 @@ _**How you avoided duplicated code?**_
 
 # How to compile the project
 
-We use Apache Maven to compile and run this project. 
+We use Apache Maven to compile and run this project.
 
-You need to install Apache Maven (https://maven.apache.org/)  on your system. 
+You need to install Apache Maven (https://maven.apache.org/)  on your system.
 
-Type on the command line: 
+Type on the command line:
 
 ```bash
 mvn clean compile
 ```
 
-# How to create a binary runnable package 
+# How to create a binary runnable package
 
 
 ```bash
@@ -109,18 +109,18 @@ mvn -q clean compile exec:java -Dexec.executable="edu.bu.met.cs665.Main" -Dlog4j
 mvn clean compile test checkstyle:check  spotbugs:check
 ```
 
-# Using Spotbugs to find bugs in your project 
+# Using Spotbugs to find bugs in your project
 
 To see bug detail using the Findbugs GUI, use the following command "mvn findbugs:gui"
 
-Or you can create a XML report by using  
+Or you can create a XML report by using
 
 
 ```bash
 mvn spotbugs:gui 
 ```
 
-or 
+or
 
 
 ```bash
@@ -132,22 +132,22 @@ mvn spotbugs:spotbugs
 mvn spotbugs:check 
 ```
 
-check goal runs analysis like spotbugs goal, and make the build failed if it found any bugs. 
+check goal runs analysis like spotbugs goal, and make the build failed if it found any bugs.
 
 
-For more info see 
+For more info see
 https://spotbugs.readthedocs.io/en/latest/maven.html
 
 
 SpotBugs https://spotbugs.github.io/ is the spiritual successor of FindBugs.
 
 
-# Run Checkstyle 
+# Run Checkstyle
 
-CheckStyle code styling configuration files are in config/ directory. Maven checkstyle plugin is set to use google code style. 
-You can change it to other styles like sun checkstyle. 
+CheckStyle code styling configuration files are in config/ directory. Maven checkstyle plugin is set to use google code style.
+You can change it to other styles like sun checkstyle.
 
-To analyze this example using CheckStyle run 
+To analyze this example using CheckStyle run
 
 ```bash
 mvn checkstyle:check
@@ -161,7 +161,7 @@ target/checkstyle-checker.xml
 target/checkstyle-result.xml
 ```
 
-and the following command will generate a report in HTML format that you can open it using a Web browser. 
+and the following command will generate a report in HTML format that you can open it using a Web browser.
 
 ```bash
 mvn checkstyle:checkstyle
@@ -170,7 +170,3 @@ mvn checkstyle:checkstyle
 ```bash
 target/site/checkstyle.html
 ```
-
-
-
-
